@@ -18,15 +18,13 @@ cholesky(double *M, int n){
 			for(size_t j=0; j<k; j++)
 				sum += L[i*n+j] * L[k*n+j];
 
-				L[i*n+k] = (i!=k) ? (M[i*n+k]-sum)/L[k*n+k]:
-					sqrt(M[i*n+i] - sum);
+			L[i*n+k] = (i!=k) ? (M[i*n+k]-sum)/L[k*n+k]:
+				sqrt(M[i*n+i] - sum);
 
 		}
 	}
 
-
 	return L;
-
 }
 
 void
